@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutAppbarText" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="AboutContentText" xml:space="preserve">
+    <value>Metro Calendar Windows Phone版
+版本 01.00.00
+版权所有 © 2011-2012 熊猫工作室
+保留所有权利</value>
+  </data>
+  <data name="AlarmAppbarText" xml:space="preserve">
+    <value>提醒</value>
+  </data>
+  <data name="AlarmHeadText" xml:space="preserve">
+    <value>提醒</value>
+  </data>
+  <data name="AlarmTimeHeadText" xml:space="preserve">
+    <value>提醒时间</value>
+  </data>
+  <data name="AnniversaryAppbarText" xml:space="preserve">
+    <value>纪念日</value>
+  </data>
+  <data name="AnniversaryText" xml:space="preserve">
+    <value>纪念日</value>
+  </data>
+  <data name="AprText" xml:space="preserve">
+    <value>四月</value>
+  </data>
+  <data name="AugText" xml:space="preserve">
+    <value>八月</value>
+  </data>
+  <data name="AuthorContentText" xml:space="preserve">
+    <value>中国・北京
+设计者: 孙金波
+邮箱：sunjinbo@hotmail.com</value>
+  </data>
+  <data name="CancelAppbarText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CurrentdayText" xml:space="preserve">
+    <value>当前日</value>
+  </data>
+  <data name="DailyText" xml:space="preserve">
+    <value>每天</value>
+  </data>
+  <data name="DecText" xml:space="preserve">
+    <value>十二月</value>
+  </data>
+  <data name="DeleteAppbarText" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="DoneAppbarText" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="EmptySubjectWarningText" xml:space="preserve">
+    <value>请填写主题，此项不能为空！</value>
+  </data>
+  <data name="FebText" xml:space="preserve">
+    <value>二月</value>
+  </data>
+  <data name="FortnightlyText" xml:space="preserve">
+    <value>每两周</value>
+  </data>
+  <data name="FestivalText" xml:space="preserve">
+    <value>节日</value>
+  </data>
+  <data name="JanText" xml:space="preserve">
+    <value>一月</value>
+  </data>
+  <data name="JulText" xml:space="preserve">
+    <value>七月</value>
+  </data>
+  <data name="JunText" xml:space="preserve">
+    <value>六月</value>
+  </data>
+  <data name="MarText" xml:space="preserve">
+    <value>三月</value>
+  </data>
+  <data name="MayText" xml:space="preserve">
+    <value>五月</value>
+  </data>
+  <data name="MemoAppbarText" xml:space="preserve">
+    <value>备忘录</value>
+  </data>
+  <data name="MonthlyText" xml:space="preserve">
+    <value>每月</value>
+  </data>
+  <data name="NoAlarmText" xml:space="preserve">
+    <value>无提醒</value>
+  </data>
+  <data name="NotRepeatedText" xml:space="preserve">
+    <value>只有今天</value>
+  </data>
+  <data name="NovText" xml:space="preserve">
+    <value>十一月</value>
+  </data>
+  <data name="OctText" xml:space="preserve">
+    <value>十月</value>
+  </data>
+  <data name="OkAppbarText" xml:space="preserve">
+    <value>好</value>
+  </data>
+  <data name="PauseAppbarText" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="PauseText" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="PlayAppbarText" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="PlayingText" xml:space="preserve">
+    <value>播放中</value>
+  </data>
+  <data name="RecordingText" xml:space="preserve">
+    <value>录音中</value>
+  </data>
+  <data name="RecordTimeText" xml:space="preserve">
+    <value>(录制时间)</value>
+  </data>
+  <data name="RepeatHeadText" xml:space="preserve">
+    <value>循环</value>
+  </data>
+  <data name="ResumeAppbarText" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="RingtoneHeadText" xml:space="preserve">
+    <value>铃声</value>
+  </data>
+  <data name="SepText" xml:space="preserve">
+    <value>九月</value>
+  </data>
+  <data name="StopAppbarText" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="SubjectHeadText" xml:space="preserve">
+    <value>主题 (限26字)</value>
+  </data>
+  <data name="TodayText" xml:space="preserve">
+    <value>今天</value>
+  </data>
+  <data name="UpdateAppbarText" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="VibratingAlertHeadText" xml:space="preserve">
+    <value>震动提示</value>
+  </data>
+  <data name="VoiceMemoText" xml:space="preserve">
+    <value>声音备忘录</value>
+  </data>
+  <data name="WarningTitleText" xml:space="preserve">
+    <value>提示</value>
+  </data>
+  <data name="WeekendText" xml:space="preserve">
+    <value>周末</value>
+  </data>
+  <data name="WeeklyText" xml:space="preserve">
+    <value>每周</value>
+  </data>
+  <data name="WorkdayText" xml:space="preserve">
+    <value>工作日</value>
+  </data>
+  <data name="YearlyText" xml:space="preserve">
+    <value>每年</value>
+  </data>
+  <data name="InitializingText" xml:space="preserve">
+    <value>初始化</value>
+  </data>
+  <data name="ExpirationTimeHeadText" xml:space="preserve">
+    <value>结束日期</value>
+  </data>
+  <data name="EnterSubjectText" xml:space="preserve">
+    <value>输入主题</value>
+  </data>
+  <data name="AlarmExpirationWarningText" xml:space="preserve">
+    <value>提醒结束日期早于开始日期！</value>
+  </data>
+  <data name="AlarmExpiredWarningText" xml:space="preserve">
+    <value>提醒时间已过，请重新设置！</value>
+  </data>
+  <data name="AnniversaryExpirationWarningText" xml:space="preserve">
+    <value>纪念日的提醒结束日期早于开始日期！</value>
+  </data>
+  <data name="NextAlarmText" xml:space="preserve">
+    <value>下一个提醒</value>
+  </data>
+  <data name="RepeatYearlyText" xml:space="preserve">
+    <value>周年循环</value>
+  </data>
+</root>

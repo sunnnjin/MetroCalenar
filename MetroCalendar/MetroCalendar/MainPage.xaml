@@ -1,0 +1,230 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="MetroCalendar.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:MetroCalendar.Controls" 
+    xmlns:local="clr-namespace:MetroCalendar.Converters"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" 
+    Loaded="PhoneApplicationPage_Loaded">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="BeginRecorderStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="_memoRecorderPanel">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="400.0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="800.0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1200.0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1100.0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1180.0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1130.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1160.0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1150.0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+        <Storyboard x:Name="StopRecorderStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="_memoRecorderPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1150.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="800.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="200.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="BeginPlayerStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="_memoPlayerPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="400.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="800.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1200.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1100.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1180.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1130.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1160.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1150.0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="StopPlayerStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="_memoPlayerPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1150.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="800.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="200.0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <StackPanel x:Name="LayoutRoot" Background="White">
+        <StackPanel.Resources>
+            <local:EntryTypeToBackgroundConverter x:Key="EntryTypeToBackgroundConverter" />
+            <local:EntryTypeToImageConverter x:Key="EntryTypeToImageConverter" />
+            <local:EntryToExtraImageConverter x:Key="EntryToExtraImageConverter" />
+            <local:DateTimeToDateStringConverter x:Key="DateTimeToDateStringConverter" />
+            <local:DateTimeToYearStringConverter x:Key="DateTimeToYearStringConverter" />
+        </StackPanel.Resources>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal"
+                    Background="DarkBlue" Canvas.ZIndex="3">
+            <Image Stretch="Uniform"
+                   Height="32"
+                   Width="32"
+                   Margin="10,0,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Source="/Resources/Images/AppIcon.png"/>
+            <TextBlock Text="METRO CALENDAR" 
+                       Style="{StaticResource PhoneTextNormalStyle}" 
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Foreground="White" 
+                       Height="26"
+                       FontSize="17" 
+                       FontWeight="ExtraLight"
+                       Width="351" />
+            <my:DigitalClock x:Name="digitalClock1" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <!-- Calendar panel -->
+        <my:CalendarPanel x:Name="_calendarPanel"  Canvas.ZIndex="3" />
+        
+        <!-- Memo recording panel -->
+        <my:MemoRecorderPanel x:Name="_memoRecorderPanel" 
+                             HorizontalAlignment="Left" 
+                             VerticalAlignment="Top" 
+                             Height="594" 
+                             Margin="0,-1152,0,0"
+                             Canvas.ZIndex="2" 
+                             Width="480">
+            <my:MemoRecorderPanel.RenderTransform>
+        		<CompositeTransform/>
+            </my:MemoRecorderPanel.RenderTransform>
+        </my:MemoRecorderPanel>
+        
+        <!-- Memo playing panel -->
+        <my:MemoPlayerPanel x:Name="_memoPlayerPanel" 
+                             HorizontalAlignment="Left" 
+                             VerticalAlignment="Top" 
+                             Height="594" 
+                             Margin="0,-1152,0,0"
+                             Canvas.ZIndex="2" 
+                             Width="480">
+            <my:MemoPlayerPanel.RenderTransform>
+                <CompositeTransform/>
+            </my:MemoPlayerPanel.RenderTransform>
+        </my:MemoPlayerPanel>
+        
+        <!-- Calendar month panel -->
+        <my:CalendarMonthView x:Name="_calendarMonthView" 
+                              Width="476" 
+                              Canvas.ZIndex="0" />
+        
+        <!-- Sign panel -->
+        <my:SignPanel Canvas.ZIndex="0"/>
+
+        <!-- Entry listbox -->
+        <Border Name="_listboxBorder" VerticalAlignment="Top" HorizontalAlignment="Left"
+        	Height="100" Width="479" BorderBrush="White" BorderThickness="1">
+            
+        	<ListBox x:Name="_listbox"
+        		DoubleTap="OnDoubleListboxTap">
+        		<ListBox.ItemContainerStyle>
+        			<Style TargetType="ListBoxItem">
+        				<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        			</Style>
+        		</ListBox.ItemContainerStyle>
+        		<ListBox.ItemTemplate>
+        			<DataTemplate>
+        				<Border Height="50" Width="476" BorderBrush="White" BorderThickness="1" >
+        					<StackPanel Orientation="Horizontal" Width="476" Background="#FF838383">
+        						<Border HorizontalAlignment="Left" 
+        							VerticalAlignment="Top"
+        							Height="47"  
+        							Width="39" BorderBrush="Black" Background="White">
+        							<Canvas Background="{Binding EntryType, Converter={StaticResource EntryTypeToBackgroundConverter}, Mode=OneWay}">
+        								<Image Width="32" 
+        									Height="32" 
+        									Canvas.Left="2" 
+        									Canvas.Top="8" 
+        									HorizontalAlignment="Left" 
+        									VerticalAlignment="Top"/>
+        								<Image Width="32" 
+        									Height="32" 
+        									Canvas.Left="2" 
+        									Canvas.Top="8" 
+        									HorizontalAlignment="Left" 
+        									VerticalAlignment="Top"
+        									Stretch="None"
+        									Source="{Binding EntryType, Converter={StaticResource EntryTypeToImageConverter}, Mode=OneWay}"/>
+        							</Canvas>
+        						</Border>
+        						<Canvas Width="280" Background="#FF838383">
+        							<TextBlock Foreground="Black" 
+        								Width="218" 
+        								Height="28"
+        								MaxWidth="218"
+        								MaxHeight="28"
+        								HorizontalAlignment="Left" 
+        								FontWeight="Bold" 
+        								LineHeight="8" 
+        								Canvas.Left="3" 
+        								Canvas.Top="10" 
+        								Text="{Binding Subject, Mode=OneWay}"
+        								VerticalAlignment="Center" TextWrapping="Wrap" />
+        							<TextBlock Foreground="White" 
+        								TextWrapping="NoWrap" 
+        								Width="56" 
+        								Height="23" 
+        								Text="{Binding CreateTime, Converter={StaticResource DateTimeToYearStringConverter}, Mode=OneWay}"
+        								Canvas.Left="220" 
+        								HorizontalAlignment="Right" 
+        								FontSize="16" 
+        								TextAlignment="Right" 
+        								Margin="0,0,5,0"/>
+        							<TextBlock Foreground="White" 
+        								TextWrapping="NoWrap" 
+        								Width="56" 
+        								Height="23" 
+        								Text="{Binding StartTime, Converter={StaticResource DateTimeToDateStringConverter}, Mode=OneWay}"
+        								Canvas.Left="220" 
+        								HorizontalAlignment="Right" 
+        								FontSize="16" 
+        								Canvas.Top="23" 
+        								TextAlignment="Right"
+        								Margin="0,0,5,0"/>
+        						</Canvas>
+        						<Canvas Width="155" Background="Black">
+        							<TextBlock TextWrapping="NoWrap" 
+        								Width="86" 
+        								Height="28" 
+        								FontSize="16" 
+        								Margin="2 0" 
+        								Text="{Binding ExtraInfo, Mode=OneWay}"
+        								Foreground="White"
+        								Canvas.Top="10" 
+        								Canvas.Left="3"
+        								TextTrimming="WordEllipsis"/>
+        							<Image x:Name="extraImage"
+        								Width="45" 
+        								Height="45" 
+        								Canvas.Left="90"
+        								Stretch="Fill"
+        								Source="{Binding Self, Converter={StaticResource EntryToExtraImageConverter}, Mode=OneWay}" 
+        								Canvas.Top="1"/>
+        						</Canvas>
+        					</StackPanel>
+        				</Border>
+        			</DataTemplate>
+        		</ListBox.ItemTemplate>
+        	</ListBox>
+        </Border>
+        <!-- Entry listbox -->
+    </StackPanel>
+</phone:PhoneApplicationPage>

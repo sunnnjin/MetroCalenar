@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="MetroCalendar.Controls.SignPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" d:DesignWidth="480" Height="74">
+    
+    <Grid x:Name="LayoutRoot" Height="74">
+        <Canvas HorizontalAlignment="Left" 
+                Width="480" 
+                Background="White" Height="74" >
+        	<Border Background="#FFAD8500" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    BorderBrush="White" 
+                    BorderThickness="1" 
+                    Height="38">
+        		<TextBlock TextWrapping="Wrap" 
+                           Text="{Binding Path=LocalizedResources.WeekendText, Source={StaticResource LocalizedStrings}}" 
+                           Height="38" 
+                           Width="144" 
+                           Foreground="Black" 
+                           VerticalAlignment="Center" 
+                           FontSize="26" 
+                           TextAlignment="Center" 
+                           FontWeight="Light" />
+        	</Border>
+        	<Border Background="#FF25830F" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    BorderBrush="White" 
+                    Canvas.Left="327" 
+                    Width="152" 
+                    Height="38" 
+                    BorderThickness="1">
+                <TextBlock TextWrapping="Wrap" 
+                           Text="{Binding Path=LocalizedResources.TodayText, Source={StaticResource LocalizedStrings}}" 
+                           Foreground="White" 
+                           FontSize="26" 
+                           Width="144" 
+                           TextAlignment="Center" 
+                           FontWeight="Light" VerticalAlignment="Center" />
+        	</Border>
+        	<Border Background="#FFDE1418" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    BorderBrush="White" 
+                    Canvas.Left="146" 
+                    Width="184" 
+                    Height="38" 
+                    BorderThickness="1,1,2,1">
+                <TextBlock TextWrapping="Wrap" 
+                           Text="{Binding Path=LocalizedResources.FestivalText, Source={StaticResource LocalizedStrings}}" 
+                           Height="38" 
+                           Foreground="White" 
+                           VerticalAlignment="Center" 
+                           FontSize="26" 
+                           TextAlignment="Center" 
+                           FontWeight="Light" 
+                           Width="90" />
+        	</Border>
+        	<Border Background="#FF94004C" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    BorderBrush="White" 
+                    Canvas.Top="38" 
+                    Width="168" 
+                    Height="38" 
+                    BorderThickness="1" Canvas.Left="311">
+                <TextBlock TextWrapping="Wrap" 
+                          Text="{Binding Path=LocalizedResources.WorkdayText, Source={StaticResource LocalizedStrings}}" 
+                           Height="38" 
+                           Width="166" 
+                           Foreground="White" 
+                           VerticalAlignment="Center" 
+                           FontSize="26" 
+                           TextAlignment="Center" 
+                           FontWeight="Light" />
+        	</Border>
+        	<Border Background="AntiqueWhite" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    BorderBrush="White" 
+                    Canvas.Left="160" 
+                    Width="152" 
+                    Height="38" 
+                    Canvas.Top="38" 
+                    BorderThickness="1">
+                <TextBlock TextWrapping="Wrap" 
+                           Text="{Binding Path=LocalizedResources.CurrentdayText, Source={StaticResource LocalizedStrings}}" 
+                           Foreground="#FF00008C" 
+                           FontSize="26" 
+                           TextAlignment="Center" 
+                           FontWeight="Light" 
+                           Height="38" 
+                           VerticalAlignment="Center" />
+        	</Border>
+        	<Border Background="#FF3879C6" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    BorderBrush="White" 
+                    Canvas.Left="1" 
+                    Width="160" 
+                    Height="38" 
+                    Canvas.Top="38" 
+                    BorderThickness="1">
+                <TextBlock TextWrapping="Wrap" 
+                           Text="{Binding Path=LocalizedResources.AnniversaryText, Source={StaticResource LocalizedStrings}}" 
+                           Height="38" 
+                           Foreground="White" 
+                           VerticalAlignment="Center" 
+                           FontSize="26" 
+                           TextAlignment="Center" 
+                           FontWeight="Light" />
+        	</Border>
+        </Canvas>
+    </Grid>
+</UserControl>

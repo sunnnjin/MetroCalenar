@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="MetroCalendar.Controls.CalendarPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MetroCalendar.Converters"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="95" d:DesignWidth="480" >
+    
+    <Grid x:Name="LayoutRoot" Background="White" Height="95">
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Canvas Height="93" 
+                    Width="478"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                    Background="Black">
+            	<StackPanel Canvas.Left="7" Canvas.Top="34" Width="331" Orientation="Horizontal">
+                    <TextBlock TextWrapping="Wrap" 
+                               Text="{Binding Month, Mode=OneWay}" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontSize="48" 
+                               Height="60" />
+            		<TextBlock TextWrapping="Wrap" 
+                               Text="{Binding Day, Mode=OneWay}"
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center" 
+                               Foreground="White"
+                               FontSize="36" 
+                               Margin="15,0,0,0" 
+                               Height="39" />
+            	</StackPanel>
+            	<StackPanel Height="32" Canvas.Left="7" Orientation="Horizontal" Canvas.Top="1">
+                    <StackPanel.Resources>
+                        <local:DateTimeToYearStringConverter x:Key="DateTimeToYearStringConverter" />
+                    </StackPanel.Resources>
+                    
+                    <TextBlock FontWeight="Light" 
+                               TextWrapping="NoWrap" 
+                               Text="{Binding Year, Mode=OneWay}" 
+                               Foreground="White"
+                               Width="48" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"/>
+            		<Image Source="/Resources/Images/Go.png" Margin="6 0" />
+            	</StackPanel>
+                <Image Canvas.Left="458" 
+                       Canvas.Top="20" 
+                       Height="64" 
+                       Stretch="Fill" 
+                       Width="20" 
+                       Source="/Resources/Images/Mark.png" 
+                       Opacity="0.8" />
+                <toolkit:DatePicker Canvas.Top="1" 
+                                    Name="datePicker"
+                                    Tap="OnDatePickerTap"
+                                    Value="{Binding Date, Mode=TwoWay}"
+                                    Height="92" 
+                                    Width="347" 
+                                    Opacity="0" />
+            </Canvas>
+        </Border>
+    </Grid>
+</UserControl>

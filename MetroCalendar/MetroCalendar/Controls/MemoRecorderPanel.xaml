@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="MetroCalendar.Controls.MemoRecorderPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MetroCalendar.Converters"
+    xmlns:my="clr-namespace:MetroCalendar.Controls"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="590" d:DesignWidth="480" >
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Border HorizontalAlignment="Left" 
+                Width="480" 
+                Height="244"
+                Margin="0,4,0,0"
+                BorderThickness="0" 
+                BorderBrush="White"  
+                VerticalAlignment="Top">
+    		<Canvas Background="White" Width="473">
+        		<TextBlock Height="30" 
+                           Text="{Binding StatusText, Mode=OneWay}" 
+                           Width="135" 
+                           Foreground="Black" 
+                           Canvas.Left="6" 
+                           Canvas.Top="6" />
+                <my:MicrophonePanel Canvas.Left="120" Canvas.Top="2" />
+            </Canvas>
+    	</Border>
+        <Border Name="InfoBorder" 
+                HorizontalAlignment="Left" 
+                Height="89" 
+                VerticalAlignment="Top" 
+                Width="480" 
+                BorderBrush="AntiqueWhite" 
+                BorderThickness="1" 
+                Margin="0,250,0,0" >
+            <Grid Background="AntiqueWhite" Height="88">
+                <Grid.Resources>
+                    <local:DateTimeToLongDateStringConverter x:Key="DateTimeToLongDateStringConverter" />
+                </Grid.Resources>
+        		<TextBlock Height="30" 
+                           HorizontalAlignment="Right" 
+                           Margin="0,0,6,7" 
+                           x:Name="timeTextBlock" 
+                           Text="{Binding RecordingTimeText, Mode=OneWay}" 
+                           VerticalAlignment="Bottom" 
+                           Width="144" 
+                           TextAlignment="Right" 
+                           Foreground="Black" FontWeight="Bold" />
+        		<Image HorizontalAlignment="Left" 
+                       Margin="8,8,0,39" 
+                       x:Name="image2" 
+                       Stretch="Fill" 
+                       Width="40" 
+                       Source="/Resources/Images/Volume.png" 
+                       RenderTransformOrigin="0.242,0.543" />
+                <TextBlock Height="30" 
+                           HorizontalAlignment="Left" 
+                           Margin="328,6,0,0" 
+                           Name="spaceTextBlock" 
+                           Text="{Binding FormattedSpace, Mode=OneWay}" 
+                           VerticalAlignment="Top" 
+                           TextAlignment="Right"
+                           Width="144" Foreground="DarkGray" />
+                <StackPanel Height="34" 
+                            Margin="6,0,188,3" 
+                            Orientation="Horizontal" 
+                            VerticalAlignment="Bottom" 
+                            d:LayoutOverrides="Width">
+                	<TextBlock Height="30" 
+                		Text="{Binding CreateTime, Converter={StaticResource DateTimeToLongDateStringConverter}, Mode=OneWay}" 
+                		VerticalAlignment="Top" 
+                		FontWeight="Normal" 
+                		Foreground="Black" />
+                	<TextBlock Margin="2,0,0,0" 
+                               Text="{Binding LocalizedResources.RecordTimeText, Source={StaticResource LocalizedStrings}}"
+                               TextWrapping="Wrap" 
+                               HorizontalAlignment="Left" 
+                               Foreground="#FFFD3737" 
+                               Height="30" 
+                               FontSize="16"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" 
+                Width="480" 
+                BorderThickness="1" 
+                Background="White" 
+                BorderBrush="White" Margin="0,335,0,-18">
+            <StackPanel x:Name="BarsStackPanel" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,0,4"/>
+        </Border>
+    </Grid>
+</UserControl>
